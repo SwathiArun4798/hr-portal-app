@@ -1,0 +1,67 @@
+@import "bootstrap-icons/font/bootstrap-icons";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+body {
+    background-image: url(./../../assets/background.jpg);
+}
+.login-container,
+.register-container {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: rgb(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 25px;
+    width: 400px !important;
+    h2 {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        .form-group {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin: 5px;
+            label {
+                font-size: 20px;
+                font-weight: bold;
+            }
+            input {
+                border-radius: 5px;
+                border: none;
+            }
+            .otpNo {
+                display: none;
+            }
+        }
+        .toggle {
+            display: flex;
+            justify-content: center;
+        }
+        .btn {
+            width: auto;
+            margin: 5px auto;
+        }
+        .link {
+            font-weight: bold;
+            margin-top: 5px;
+            border: none;
+            background-color: transparent;
+            color: blue;
+        }
+        .link:hover {
+            color: rgb(13, 13, 103);
+        }
+    }
+}
