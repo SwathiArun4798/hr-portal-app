@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import LeaveApply from "./SubComponents/LeaveStatus";
+import LeaveApply from "./SubComponents/LeaveApply";
 import LeaveRequests from "./SubComponents/LeaveRequests";
-import LeaveStatus from "./SubComponents/LeaveStatus";
 import AddEmployee from "./SubComponents/AddEmployee";
-export default function Dashborad(props) {
+import EmployeeDetails from './SubComponents/EmployeeDetails';
+export default function Dashboard(props) {
   const quotes = [
     "The greatest glory in living lies not in never falling, but in rising every time we fall.",
     "The way to get started is to quit talking and begin doing.",
@@ -34,7 +34,7 @@ export default function Dashborad(props) {
       </header>
 
       <main className="row gx-0 justify-content-center">
-        <section className="quotes mt-5 col-12">
+        <section className="quotes mt-3 mb-2 col-12">
           <h2>Daily Quotes</h2>
           <p id="quotes">{quotes[Math.floor(Math.random() * quotes.length)]}</p>
         </section>
@@ -43,7 +43,7 @@ export default function Dashborad(props) {
           {props.user === "Employee" ? (
             <div className="row gx-0 d-flex justify-content-center align-items-center col-12">
               <LeaveApply />
-              <LeaveStatus />
+              <EmployeeDetails {...props.userName}/>
             </div>
           ) : (
             <div className="row gx-0 d-flex justify-content-center align-items-center col-12">
@@ -63,6 +63,6 @@ export default function Dashborad(props) {
   );
 }
 
-Dashborad.defaultProps = {
+Dashboard.defaultProps = {
   userName: "Guest",
 };

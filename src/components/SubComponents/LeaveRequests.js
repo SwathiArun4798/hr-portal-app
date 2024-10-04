@@ -16,7 +16,7 @@ export default function LeaveRequests() {
     }
 
     return (
-        <div className="container sub-container col-8 mt-5 text-center">
+        <div className="container sub-container col-8 m-2 text-center">
             <h3>Leave Requests</h3>
             <table className="table table-striped table-hover">
                 <thead>
