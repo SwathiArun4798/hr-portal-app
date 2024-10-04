@@ -7,6 +7,20 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Dashboard from "./components/Dashboard";
 import { useState } from "react";
 
+
+function fetchData() {
+  fetch("http://localhost:3030/users")
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+fetchData();
+
 /**
  * App component, which renders a router with routes to login, register, and
  * dashboard pages.

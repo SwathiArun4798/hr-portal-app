@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import LeaveApply from "./SubComponents/LeaveApply";
 import LeaveRequests from "./SubComponents/LeaveRequests";
 import AddEmployee from "./SubComponents/AddEmployee";
-import EmployeeDetails from './SubComponents/EmployeeDetails';
+import EmployeeDetails from './SubComponents/employeeDetails';
 export default function Dashboard(props) {
   const quotes = [
     "The greatest glory in living lies not in never falling, but in rising every time we fall.",
