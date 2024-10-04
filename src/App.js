@@ -5,21 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./styling/common.scss";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Dashboard from "./components/Dashboard";
-import { useState } from "react";
-
-
-function fetchData() {
-  fetch("http://localhost:3030/users")
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-}
-
-fetchData();
+import { useEffect, useState } from "react";
 
 /**
  * App component, which renders a router with routes to login, register, and
@@ -32,6 +18,8 @@ fetchData();
  */
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [jsonData, setJsonData] = useState(null);
+
   const login = () => {
     setIsAuthenticated(true);
     console.log("user logged in");
@@ -46,12 +34,23 @@ function App() {
     console.log("user logged out");
   };
 
+  useEffect(() => {
+    fetch("http://localhost:3030/users")
+      .then((res) => res.json())
+      .then((data) => {
+        setJsonData(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <div>
       <Router>
         <Routes>
-          <Route path="/" element={<Login login={login} />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<Login login={login} data={jsonData}/>} />
+          <Route path="/register" element={<Register data={jsonData}/>} />
           <Route
             path="/dashboard"
             element={

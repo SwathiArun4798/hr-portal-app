@@ -1,5 +1,13 @@
 {
     "users": [
-      
+        {
+            "name":"John",
+            "email": "john@gmail.com",
+            "password":"john",
+            "phone": "1234567890",
+            "address":"Broadway",
+            "department":"HR",
+            "Role":"Senior"
+        }
     ]
 }
