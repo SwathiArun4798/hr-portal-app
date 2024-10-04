@@ -5,6 +5,7 @@ import HRDashboard from "./components/HRDashboard";
 import EmployeeDashboard from "./components/EmployeeDashboard";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./styling/common.scss";
+import Dashborad from "./components/Dashborad";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/hrDashboard" element={<HRDashboard />} />
           <Route path="/employeeDashboard" element={<EmployeeDashboard />} />
+          <Route path="/dashboard" element={<Dashborad userName="Guest" user="HR"/>} />
         </Routes>
       </Router>
     </div>
