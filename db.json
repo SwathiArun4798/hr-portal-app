@@ -1,13 +1,16 @@
 {
-    "users": [
-        {
-            "name":"John",
-            "email": "john@gmail.com",
-            "password":"john",
-            "phone": "1234567890",
-            "address":"Broadway",
-            "department":"HR",
-            "Role":"Senior"
-        }
-    ]
+  "users": [
+    {
+      "empId": 1,
+      "name": "John",
+      "age": 30,
+      "gender": "male",
+      "emailId": "john@gmail.com",
+      "password": "1234",
+      "phone": "1234567890",
+      "address": "Broadway",
+      "department": "HR",
+      "Role": "Senior"
+    }
+  ]
 }

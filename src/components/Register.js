@@ -79,3 +79,10 @@ Register.propTypes = {
   confirmPassword: PropTypes.string.isRequired,
   otp: PropTypes.number.isRequired,
 }
+
+Register.defaultProps = {
+  emailId: "",
+  createPassword: "",
+  confirmPassword: "",
+  otp: 0
+}

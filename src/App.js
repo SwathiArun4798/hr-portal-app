@@ -41,21 +41,28 @@ function App() {
         setJsonData(data);
       })
       .catch((err) => {
-        console.log(err);
+        alert("server is disconnected");
       });
   }, []);
 
+  useEffect(() => {
+    if (isAuthenticated) {
+      window.history.pushState({}, "", "/dashboard");
+    }
+  }, [isAuthenticated]);
+
+  
   return (
     <div>
       <Router>
         <Routes>
-          <Route path="/" element={<Login login={login} data={jsonData}/>} />
-          <Route path="/register" element={<Register data={jsonData}/>} />
+          <Route path="/" element={<Login login={login} data={jsonData} />} />
+          <Route path="/register" element={<Register data={jsonData} />} />
           <Route
             path="/dashboard"
             element={
               <ProtectedRoute isAuthenticated={isAuthenticated}>
-                <Dashboard userName="Guest" user="Employee" logout={logout} />
+                <Dashboard/>
               </ProtectedRoute>
             }
           />

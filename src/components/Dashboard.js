@@ -3,7 +3,12 @@ import LeaveApply from "./SubComponents/LeaveApply";
 import LeaveRequests from "./SubComponents/LeaveRequests";
 import AddEmployee from "./SubComponents/AddEmployee";
 import EmployeeDetails from './SubComponents/employeeDetails';
-export default function Dashboard(props) {
+import { useLocation } from "react-router-dom";
+export default function Dashboard() {  
+
+  const {state} = useLocation();
+  const data = state;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const quotes = [
     "The greatest glory in living lies not in never falling, but in rising every time we fall.",
     "The way to get started is to quit talking and begin doing.",
@@ -17,20 +22,20 @@ export default function Dashboard(props) {
       document.getElementById("quotes").innerHTML =
         quotes[Math.floor(Math.random() * quotes.length)];
     }, 3000);
-  }, [props.userName]);
+  }, [quotes]);
 
   return (
     <div className="container dashboard-container gx-0">
       <header>
         <h2 className="title">
-          HR Portal /<span className="subtitle"> {props.user} Dashboard</span>
+          HR Portal /<span className="subtitle"> {data.department} Dashboard</span>
         </h2>
         <h3>
-          Welcome <span className="userName">{props.userName}</span>!
+          Welcome <span className="userName">{data.name}</span>!
         </h3>
-        <h4 className="">
+        <h3 className="">
           <i className="bi bi-box-arrow-right"></i> LOG OUT
-        </h4>
+        </h3>
       </header>
 
       <main className="row gx-0 justify-content-center">
@@ -40,10 +45,10 @@ export default function Dashboard(props) {
         </section>
 
         <section className="col-12">
-          {props.user === "Employee" ? (
+          {data.department === "Employee" ? (
             <div className="row gx-0 d-flex justify-content-center align-items-center col-12">
               <LeaveApply />
-              <EmployeeDetails {...props.userName}/>
+              <EmployeeDetails {...data.department}/>
             </div>
           ) : (
             <div className="row gx-0 d-flex justify-content-center align-items-center col-12">
@@ -63,6 +68,9 @@ export default function Dashboard(props) {
   );
 }
 
-Dashboard.defaultProps = {
-  userName: "Guest",
-};
+// Dashboard.defaultProps = {
+//   userName: "Guest",
+//   user: "Employee",
+//   department: "employee",
+//   name: "Guest",
+// };

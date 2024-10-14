@@ -5,7 +5,7 @@ export default function LeaveApply() {
       <form className="row">
         <div className="form-group col-4">
             <label>Leave Type</label>
-          <select class="form-select">
+          <select className="form-select">
             <option selected>Select type</option>
             <option value="1">Sick Leave</option>
             <option value="2">Earned Leave</option>
