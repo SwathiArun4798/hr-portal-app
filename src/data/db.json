@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": "ee6a",
+      "empId": 1,
+      "name": "John",
+      "age": 30,
+      "gender": "male",
+      "emailId": "john@gmail.com",
+      "password": "1234",
+      "phone": "1234567890",
+      "role": "Senior",
+      "department": "HR",
+      "address": "Broadway"
+    },
+    {
+      "id": "f406",
+      "empId": 2,
+      "name": "Daisy",
+      "age": 26,
+      "gender": "Male",
+      "emailId": "daisy@gmail.com",
+      "phone": "8636366464",
+      "address": "chennai",
+      "department": "employee",
+      "role": "senior"
+    },
+    {
+      "id": "a926",
+      "empId": 3,
+      "name": "Arun",
+      "age": 27,
+      "gender": "Male",
+      "emailId": "arun@gmail.com",
+      "phone": "8636366464",
+      "address": "chennai",
+      "department": "employee",
+      "role": "senior"
+    },
+    {
+      "id": "b1f3"
+    }
+  ]
+}

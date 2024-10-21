@@ -4,10 +4,11 @@ import LeaveRequests from "./SubComponents/LeaveRequests";
 import AddEmployee from "./SubComponents/AddEmployee";
 import EmployeeDetails from './SubComponents/employeeDetails';
 import { useLocation } from "react-router-dom";
-export default function Dashboard() {  
+function Dashboard() {  
 
-  const {state} = useLocation();
-  const data = state;
+  const location = useLocation();
+  const data = location.state;
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const quotes = [
     "The greatest glory in living lies not in never falling, but in rising every time we fall.",
@@ -22,6 +23,7 @@ export default function Dashboard() {
       document.getElementById("quotes").innerHTML =
         quotes[Math.floor(Math.random() * quotes.length)];
     }, 3000);
+    
   }, [quotes]);
 
   return (
@@ -68,9 +70,5 @@ export default function Dashboard() {
   );
 }
 
-// Dashboard.defaultProps = {
-//   userName: "Guest",
-//   user: "Employee",
-//   department: "employee",
-//   name: "Guest",
-// };
+export default Dashboard;
+

@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 export default function Login(props) {
-  const data = props.data;
+  const users = useSelector((state) => state.users);
+  const data = users.data;
+  console.log(data);
+
   const [index, setIndex] = useState(0);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
