@@ -36,7 +36,9 @@ export default function EmployeeDetails(userData) {
 
   const saveDetails = () => {
     setReadonly(true);
-    dispatch(updateUser({ ...editedData }));
+    dispatch(updateUser({ ...editedData })).then(() =>
+      alert("Details Updated Successfully")
+    );
   };
 
   return (

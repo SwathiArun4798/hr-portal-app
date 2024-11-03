@@ -11,6 +11,7 @@ function AddEmployee() {
   const dispatch = useDispatch();
   const formRef = useRef();
   const [show, setShow] = useState(false);
+  const [newError, setNewError] = useState();
   const [formData, setFormData] = useState({
     empId: 0,
     name: "",
@@ -42,8 +43,9 @@ function AddEmployee() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newError = ValidateForms(formData);
-    if (Object.keys(newError).length > 0) {
+    setNewError(ValidateForms(formData));
+    console.log(newError);
+    if (newError) {
       alert("Please fill the form correctly");
       return;
     }
@@ -72,7 +74,12 @@ function AddEmployee() {
       <button className="btn btn-primary" onClick={() => setShow(true)}>
         Add Employee
       </button>
-      <Modal show={show} onHide={() => setShow(false)} className="modal-lg" centered>
+      <Modal
+        show={show}
+        onHide={() => setShow(false)}
+        className="modal-lg"
+        centered
+      >
         <Modal.Header closeButton>
           <Modal.Title>Add Employee Details</Modal.Title>
         </Modal.Header>

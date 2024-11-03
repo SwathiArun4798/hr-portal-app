@@ -3,7 +3,7 @@
     {
       "id": "ee6a",
       "empId": 1,
-      "name": "John",
+      "name": "John Doe",
       "age": "31",
       "gender": "male",
       "emailId": "john@gmail.com",
@@ -14,56 +14,20 @@
       "password": "1234"
     },
     {
-      "id": "58ed",
+      "id": "f051",
       "empId": 2,
-      "name": "Arun",
-      "age": "31",
-      "gender": "Male",
-      "emailId": "arun@gmail.com",
-      "phone": "8636366464",
-      "role": "senior",
-      "department": "Employee",
-      "address": "chennai",
-      "password": "1234"
-    },
-    {
-      "id": "39a9",
-      "empId": 3,
       "name": "Daisy",
-      "age": 28,
+      "age": 26,
       "gender": "Female",
       "emailId": "daisy@gmail.com",
       "password": "1234",
       "phone": "1234567890",
-      "role": "Senior",
+      "role": "Junior",
       "department": "Employee",
       "address": "Chennai"
-    },
-    {
-      "id": "e4ef",
-      "empId": 4,
-      "name": "",
-      "age": 0,
-      "gender": "",
-      "emailId": "",
-      "password": "",
-      "phone": "",
-      "role": "",
-      "department": "",
-      "address": ""
     }
   ],
   "leaveDetails": [
-    {
-      "id": "eb6a",
-      "empId": 3,
-      "name": "Daisy",
-      "department": "Employee",
-      "leaveType": "Sick leave",
-      "startDate": "2020-08-01",
-      "endDate": "2020-08-01",
-      "status": "Approved"
-    },
     {
       "id": "bce0",
       "empId": 2,

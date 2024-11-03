@@ -82,10 +82,10 @@ export default function LeaveApply(userData) {
             onChange={(e) => handleChange(e)}
             name="leaveType"
           >
-            <option value="Select type">Select type</option>
-            <option value="Sick Leave">Sick Leave</option>
-            <option value="Earned Leave">Earned Leave</option>
-            <option value="Casual Leave">Casual Leave</option>
+            <option className="option" value="Select type">Select type</option>
+            <option className="option" value="Sick Leave">Sick Leave</option>
+            <option className="option" value="Earned Leave">Earned Leave</option>
+            <option className="option" value="Casual Leave">Casual Leave</option>
           </select>
         </div>
         <div className="form-group col-4">
