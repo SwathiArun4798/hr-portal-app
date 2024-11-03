@@ -48,10 +48,12 @@ body {
                 border-radius: 5px;
                 border: none;
             }
+        }
 
-            .otpNo {
-                display: none;
-            }
+        #otpContainer {
+            justify-content: center;
+            flex-direction: column;
+            margin: 5px;
         }
 
         .toggle {
@@ -91,14 +93,18 @@ body {
         .userName,
         .subtitle {
             font-weight: bold;
-            color: #DA70D6;
-            font-size: 25px
+            color: #da70d6;
+            font-size: 25px;
         }
 
         .bi-box-arrow-right {
             cursor: pointer;
         }
 
+        .logOut {
+            background-color: transparent;
+            border: none;
+        }
     }
 
     main {
@@ -151,5 +157,15 @@ body {
         tbody {
             vertical-align: middle;
         }
+    }
+}
+
+.option {
+    color: #000;
+}
+
+.modal-dialog {
+    .modal-header {
+        color: #000;
     }
 }

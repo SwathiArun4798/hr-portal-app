@@ -2,10 +2,9 @@ import { useEffect } from "react";
 import LeaveApply from "./SubComponents/LeaveApply";
 import LeaveRequests from "./SubComponents/LeaveRequests";
 import AddEmployee from "./SubComponents/AddEmployee";
-import EmployeeDetails from './SubComponents/employeeDetails';
+import EmployeeDetails from "./SubComponents/employeeDetails";
 import { useLocation } from "react-router-dom";
-function Dashboard() {  
-
+function Dashboard({ logout }) {
   const location = useLocation();
   const data = location.state;
 
@@ -23,21 +22,21 @@ function Dashboard() {
       document.getElementById("quotes").innerHTML =
         quotes[Math.floor(Math.random() * quotes.length)];
     }, 3000);
-    
   }, [quotes]);
 
   return (
     <div className="container dashboard-container gx-0">
       <header>
         <h2 className="title">
-          HR Portal /<span className="subtitle"> {data.department} Dashboard</span>
+          HR Portal /
+          <span className="subtitle"> {data.department} Dashboard</span>
         </h2>
         <h3>
           Welcome <span className="userName">{data.name}</span>!
         </h3>
-        <h3 className="">
+        <button className="logOut" onClick={logout}>
           <i className="bi bi-box-arrow-right"></i> LOG OUT
-        </h3>
+        </button>
       </header>
 
       <main className="row gx-0 justify-content-center">
@@ -49,13 +48,14 @@ function Dashboard() {
         <section className="col-12">
           {data.department === "Employee" ? (
             <div className="row gx-0 d-flex justify-content-center align-items-center col-12">
-              <LeaveApply />
-              <EmployeeDetails {...data.department}/>
+              <LeaveApply data={data} />
+              <EmployeeDetails data={data} />
             </div>
           ) : (
             <div className="row gx-0 d-flex justify-content-center align-items-center col-12">
               <LeaveRequests />
               <AddEmployee />
+              <EmployeeDetails data={data} />
             </div>
           )}
         </section>
@@ -71,4 +71,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
-

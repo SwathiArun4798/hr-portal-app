@@ -4,41 +4,75 @@
       "id": "ee6a",
       "empId": 1,
       "name": "John",
-      "age": 30,
+      "age": "31",
       "gender": "male",
       "emailId": "john@gmail.com",
-      "password": "1234",
       "phone": "1234567890",
       "role": "Senior",
       "department": "HR",
-      "address": "Broadway"
+      "address": "Broadway",
+      "password": "1234"
     },
     {
-      "id": "f406",
+      "id": "58ed",
       "empId": 2,
-      "name": "Daisy",
-      "age": 26,
-      "gender": "Male",
-      "emailId": "daisy@gmail.com",
-      "phone": "8636366464",
-      "address": "chennai",
-      "department": "employee",
-      "role": "senior"
-    },
-    {
-      "id": "a926",
-      "empId": 3,
       "name": "Arun",
-      "age": 27,
+      "age": "31",
       "gender": "Male",
       "emailId": "arun@gmail.com",
       "phone": "8636366464",
+      "role": "senior",
+      "department": "Employee",
       "address": "chennai",
-      "department": "employee",
-      "role": "senior"
+      "password": "1234"
     },
     {
-      "id": "b1f3"
+      "id": "39a9",
+      "empId": 3,
+      "name": "Daisy",
+      "age": 28,
+      "gender": "Female",
+      "emailId": "daisy@gmail.com",
+      "password": "1234",
+      "phone": "1234567890",
+      "role": "Senior",
+      "department": "Employee",
+      "address": "Chennai"
+    },
+    {
+      "id": "e4ef",
+      "empId": 4,
+      "name": "",
+      "age": 0,
+      "gender": "",
+      "emailId": "",
+      "password": "",
+      "phone": "",
+      "role": "",
+      "department": "",
+      "address": ""
+    }
+  ],
+  "leaveDetails": [
+    {
+      "id": "eb6a",
+      "empId": 3,
+      "name": "Daisy",
+      "department": "Employee",
+      "leaveType": "Sick leave",
+      "startDate": "2020-08-01",
+      "endDate": "2020-08-01",
+      "status": "Approved"
+    },
+    {
+      "id": "bce0",
+      "empId": 2,
+      "name": "Arun",
+      "department": "Employee",
+      "leaveType": "Earned Leave",
+      "startDate": "2024-11-01",
+      "endDate": "2024-11-01",
+      "status": "Approved"
     }
   ]
 }

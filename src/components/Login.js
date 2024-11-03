@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export default function Login(props) {
   const users = useSelector((state) => state.users);
   const data = users.data;
-  console.log(data);
 
   const [index, setIndex] = useState(0);
   const navigate = useNavigate();
@@ -60,9 +58,9 @@ export default function Login(props) {
     if(data){
       for (let i = 0; i < data.length; i++) {
         if(
-          formData.emailId === data[i].emailId 
-          && formData.password === data[i].password 
-          && formData.department === data[i].department
+          formData.emailId.toUpperCase() === data[i].emailId.toUpperCase() 
+          && formData.password.toUpperCase() === data[i].password.toUpperCase()
+          && formData.department.toUpperCase() === data[i].department.toUpperCase()
         ){
           setIndex(i);
           newError = "";
@@ -147,16 +145,3 @@ export default function Login(props) {
   );
 }
 
-Login.propTypes = {
-  emailId: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
-  employee: PropTypes.bool.isRequired,
-  hr: PropTypes.bool.isRequired,
-};
-
-Login.defaultProps = {
-  emailId: "",
-  password: "",
-  employee: false,
-  hr: false,
-};
