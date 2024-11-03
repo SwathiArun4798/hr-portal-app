@@ -1,7 +1,7 @@
 import "./App.css";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import { BrowserRouter as Router, Route, Routes, json } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./styling/common.scss";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Dashboard from "./components/Dashboard";
@@ -32,7 +32,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchUsers());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>

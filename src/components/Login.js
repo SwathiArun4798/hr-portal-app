@@ -41,7 +41,7 @@ export default function Login(props) {
       navigate('/dashboard', {state:data[index]});
       props.login();
     }
-  },[errors])
+  },[data, errors, index, navigate, props])
 
 
   const handleSubmit = (e) => {
